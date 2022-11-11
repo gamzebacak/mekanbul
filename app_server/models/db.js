@@ -12,17 +12,15 @@ function kapat(msg,callback){
 process.on("SIGINT",function(){
     kapat("Uygulama kapatıldı!",function(){
         process.exit(0);
-    })
-})
+    });
+});
 mongoose.connection.on("connected",function(){
     console.log(dbURI+" adresindeki veritabanına bağlandı");
-}
-);
+});
 mongoose.connection.on("disconnected",function(){
     console.log(dbURI+" adresindeki veritabanı bağlantısı koptu");
-}
-);
+});
 mongoose.connection.on("error",function(){
     console.log("Bağlantı hatası");
-}
-);
+});
+require("./mekansema");
