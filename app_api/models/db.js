@@ -1,38 +1,36 @@
-var mongoose = require("mongoose");
-require("./mekansema");
+var mongoose=require("mongoose");
 var dbURI = 'mongodb+srv://pgamic:pgamic.2513.@mekanbul.r7bckex.mongodb.net/?retryWrites=true&w=majority';
 //var dbURI = 'mongodb://localhost/mekanbul';
 
-
-
-
-mongoose.connect(dbURI);
-
+ mongoose.connect(dbURI);
 function kapat(msg,callback){
     mongoose.connection.close(function(){
         console.log(msg);
         callback();
-    });
 }
 
+);
+
+}
 process.on("SIGINT",function(){
-    kapat("Uygulama kapatıldı",function(){
-        process.exit(0);
-    });
-})
-
-
+    kapat("Uygulama kapatıldı!",function(){
+            process.exit(0);
+    }
+    );
+}
+);
 mongoose.connection.on("connected",function(){
-    console.log(dbURI+"adresindeki veritabanına bağlandı.");
-})
+console.log(dbURI+" adresindeki veritabanına bağlanıldı!");
+}
 
-
+);
 mongoose.connection.on("disconnected",function(){
-    console.log("Bağlantı koptu.");
-})
+    console.log(dbURI+" adresindeki veritabanı bağlantısı koptu");
+}
 
-
+);
 mongoose.connection.on("error",function(){
-    console.log("Bağlantı hatası.");
-})
-
+    console.log("Bağlantı hatası");
+}
+);
+require("./mekansema");
