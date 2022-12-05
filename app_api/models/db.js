@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 require("./mekansema");
-//var dbURI = 'mongodb+srv://pgamic:pgamic.2513.@mekanbul.r7bckex.mongodb.net/?retryWrites=true&w=majority';
-var dbURI = 'mongodb://localhost/mekanbul';
+var dbURI = 'mongodb+srv://pgamic:pgamic.2513.@mekanbul.r7bckex.mongodb.net/?retryWrites=true&w=majority';
+//var dbURI = 'mongodb://localhost/mekanbul';
 
 
 
